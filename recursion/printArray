@@ -1,0 +1,18 @@
+void printHelper(int n, int index){
+    if(index>n)
+    return;
+    
+    if(index==n)
+    cout<<n;
+    else
+    cout<<index<<", ";
+    printHelper(n,index+1);
+}
+void printArray(int n)
+{
+    /*  
+     * STUDENT ANSWER
+     */
+     int index=0;
+     printHelper(n,index);
+}
