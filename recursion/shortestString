@@ -1,0 +1,17 @@
+int shortestStringHelper(const string &s) {
+    size_t pos = s.find("01");
+    if (pos == string::npos) {
+        pos = s.find("10");
+    }
+    
+    if (pos == string::npos) {
+        return s.length();
+    }
+    
+    string newString = s.substr(0, pos) + s.substr(pos + 2);
+    return shortestStringHelper(newString);
+}
+int shortestString(string s) {
+    // STUDENT ANSWER
+     return shortestStringHelper(s);
+}
