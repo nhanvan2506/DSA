@@ -1,0 +1,13 @@
+int helper(int n, int index=1){
+    if(n==1)
+    return index-1;
+    if(n%index!=0)
+    return -1;
+    else
+    return helper(n/index,index+1);
+}
+int reverseFactorial(int n) {
+    // STUDENT ANSWER
+    int temp=2;
+    return helper(n,temp);
+}
