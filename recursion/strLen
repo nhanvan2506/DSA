@@ -1,0 +1,15 @@
+int helper(char*str,int len){
+    if(str[len]==0){
+        return len;
+    }
+    else
+    return helper(str,len+1);
+}
+
+int strLen(char* str)     
+{ 
+    /*  
+     * STUDENT ANSWER
+     */
+    return helper(str,0);
+} 
