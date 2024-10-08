@@ -1,0 +1,15 @@
+int helper(char*str, int n, int index=0){
+    if (index==n)
+    return 0;
+    
+    int result=str[index]-'0';
+    return result * pow(10, n - index - 1) + helper(str, n, index + 1);
+}
+int myArrayToInt(char *str, int n) 
+{ 
+    /*  
+     * STUDENT ANSWER
+     */ 
+    int index=0;
+    return helper(str,n,index);
+}
