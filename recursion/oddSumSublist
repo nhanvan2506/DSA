@@ -1,0 +1,25 @@
+int helper(const vector<int>& nums, int m, size_t index, int current_sum, int count_even, int count_odd) {
+    if (index == nums.size()) {
+        return 0;
+    }
+    
+    current_sum += nums[index];
+   
+    int is_odd = (current_sum % 2 != 0);
+    
+    int odd_sublist_count = 0;
+
+    if (is_odd) {
+        odd_sublist_count = (count_even + 1) % m; 
+        count_odd++;
+    } else {
+        odd_sublist_count = count_odd % m; 
+        count_even++;
+    }
+
+    return (odd_sublist_count + helper(nums, m, index + 1, current_sum, count_even, count_odd)) % m;
+}
+int oddSumSublist(vector<int>& nums, int m) {
+    // STUDENT ANSWER
+    return helper(nums, m, 0, 0, 0, 0);
+}
