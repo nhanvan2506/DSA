@@ -1,0 +1,30 @@
+void helper(int n, int index, bool giam){
+    if(index>n){
+        return;
+    }
+    
+    cout<<index;
+    
+    if (giam||index!=n) {
+        cout << " ";
+    }
+    
+    if(index<=0)
+    giam=false;
+    
+    if(giam){
+        helper(n,index-5,giam);
+    }
+    else{
+        helper(n,index+5,giam);
+    }
+}
+void printPattern(int n) 
+{ 
+    /*  
+     * STUDENT ANSWER
+     */
+     int index=n;
+     bool giam=true;
+     helper(n,index,giam);
+}
